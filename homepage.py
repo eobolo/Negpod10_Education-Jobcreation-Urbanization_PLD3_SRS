@@ -28,7 +28,6 @@ def messages():
     print("{:^135}".format(option3))
     print("{:^128}".format(option4))
 
-"""
 def options():
     message = "Enter your option here: "
     print("{:^110}".format(message))
@@ -53,9 +52,7 @@ def options():
         else:
             print("Option {} not Available, put correct option"
                   .format(option))
-"""
 
-"""
 def homepage():
     """This is the homage function
     it has a bit of GUI(graphical
@@ -67,6 +64,6 @@ def homepage():
     # Display messages in code GUI format
     messages()
     options()
-"""
+
 
 homepage()
