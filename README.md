@@ -21,7 +21,7 @@ login.py
 do this ./Jobify.sh
 
 
-#General Project Description:
+# General Project Description:
 
 JOBIFY is a menu-driven application that aims to connect job seekers in the informal sector with potential employers. The application will provide various features and functionalities to facilitate job searching, job posting, and applicant management. Key features of the application include:
 
