@@ -10,6 +10,6 @@ def read_employer_data_from_file():
         return []
 
 
-# def write_employer_data_to_file(data):
-    # with open("employers_data.txt", "wb") as file:
-        # pickle.dump(data, file)
+def write_employer_data_to_file(data):
+    with open("employers_data.txt", "wb") as file:
+        pickle.dump(data, file)
