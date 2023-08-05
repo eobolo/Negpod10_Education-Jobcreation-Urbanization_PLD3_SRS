@@ -1,7 +1,7 @@
 # Jobify - Job Application App
 
 This app helps link employees to employers.
-<<<<<<< HEAD
+
 # The names of the file
 create_account.py
 employee_counter.py
