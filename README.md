@@ -17,8 +17,9 @@ Jobify.sh
 login.py
 
 # To run the app
+
 do this ./Jobify.sh
-=======
+
 
 #General Project Description:
 
@@ -61,4 +62,3 @@ My Profile:
 Users can create and manage their profiles, including personal details, work experience, and education.
 Saved Jobs:
 Allow users to save job listings they are interested in for later review.
->>>>>>> 3d3c7e93a94e81af42245e0f81e430efa9e8e849
