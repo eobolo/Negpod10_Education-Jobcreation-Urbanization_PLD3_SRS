@@ -62,3 +62,6 @@ My Profile:
 Users can create and manage their profiles, including personal details, work experience, and education.
 Saved Jobs:
 Allow users to save job listings they are interested in for later review.
+
+# Prerequisites
+Intergrated Development Environment(IDE) e.g Pycharm, Anaconda 
