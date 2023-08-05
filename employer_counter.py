@@ -10,6 +10,6 @@ def read_employer_counter_from_file():
         return 0
 
 
-#def write_employer_counter_to_file(data):
-    #with open("employers_counter.txt", "wb") as file:
-        #pickle.dump(data, file)
+def write_employer_counter_to_file(data):
+    with open("employers_counter.txt", "wb") as file:
+        pickle.dump(data, file)
