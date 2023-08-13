@@ -1,15 +1,4 @@
 #!/usr/bin/python3
-"""
-This is a module
-
-that has the class
-
-Employer and has some
-
-interesting methods
-"""
-
-
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -19,85 +8,28 @@ class Employers():
     __counter = 0
 
     def __init__(self, counter, name, email, password,
-                 dob, phnum, age, status, jobtitle):
+                 dob, phnum, age, status):
         type(self).__counter += counter + 1
         self.counter = Employers.__counter
-        self.__name = name
+        self.name = name
         self.__email = email
         self.__password = password
-        self.__dob = dob
-        self.__phnum = phnum
-        self.__age = age
+        self.dob = dob
+        self.phnum = phnum
+        self.age = age
         self.status = status
-        self.__jobtitle = self.adjustjobtitle(jobtitle)
 
     @property
     def email(self):
         return self.__email
 
-    @email.setter
-    def email(self, value):
-        self.__email = value
-
     @property
     def password(self):
         return self.__password
 
-    @password.setter
-    def password(self, value):
-        self.__password = value
-
-    @property
-    def name(self):
-        return self.__name
-
-    @name.setter
-    def name(self, value):
-        self.__name = value
-
-    @property
-    def dob(self):
-        return self.__dob
-
-    @dob.setter
-    def dob(self, value):
-        self.__dob = value
-
-    @property
-    def phnum(self):
-        return self.__phnum
-
-    @phnum.setter
-    def phnum(self, value):
-        self.__phnum = int(value)
-
-    @property
-    def age(self):
-        return self.__age
-
-    @age.setter
-    def age(self, value):
-        self.__age = int(value)
-
-    @property
-    def jobtitle(self):
-        return self.__jobtitle
-
     @staticmethod
     def counter_return():
         return Employers.__counter
-
-    def adjustjobtitle(self, job_name):
-        job_names = job_name.split(sep=" ")
-        job = ""
-        for i in range(len(job_names)):
-            if  i == len(job_names) - 1:
-                job += job_names[i].capitalize()
-                break
-            elif i != len(job_names) - 1:
-                job += job_names[i].capitalize() + " "
-        print(job)
-        return job
 
     def employers_forget_details(self):
         message = "Dear {},\n\n\nWe hope this message finds you well.\nIt appears you may have forgotten your account details for Jobify-Tech. Not to worry-we're here to help you regain access to your account.\nBelow are your account details: \n\n".format(self.name)

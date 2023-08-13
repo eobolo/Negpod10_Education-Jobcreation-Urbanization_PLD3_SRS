@@ -5,7 +5,7 @@ from employer_data import *
 from employee_data import *
 from employee_counter import *
 from employer_counter import *
-from all_jobs import *
+
 
 def creating_login_details():
 
@@ -18,7 +18,7 @@ def creating_login_details():
 
     # keys for login details
     keys = ["name", "email", "password", "dob", "phnum",
-            "age", "status", "jobtitle"]
+            "age", "status"]
 
     # creating the login details
     values = list()
@@ -38,10 +38,8 @@ def creating_login_details():
     values.append(phone_number)
     age = int(input("Enter your age in numbers: "))
     values.append(age)
-    jobtitle = input("Enter your job title: ")
     values.append(status)
-    values.append(jobtitle)
-    return (keys, values, status, jobtitle)
+    return (keys, values, status)
 
 
 def create_user_data():
@@ -56,7 +54,7 @@ def create_user_data():
     employers_dict = dict()
 
     # get the values, keys, status
-    keys, values, status, jobtitle = creating_login_details()
+    keys, values, status = creating_login_details()
 
     # checking the status to assign to the correct dictionary
     if status.lower() == "yes":
@@ -75,24 +73,6 @@ def create_user_data():
         # read the data back to the employer file
         write_employer_data_to_file(employers)
         write_employer_counter_to_file(counter)
-        #saves the jobtitle of only employers
-        #since only employers are the job givers
-        job_data = read_json_file()
-        job_names = jobtitle.split(sep=" ")
-        job = ""
-        for i in range(len(job_names)):
-            if  i == len(job_names) - 1:
-                job += job_names[i].capitalize()
-                break
-            elif i != len(job_names) - 1:
-                job += job_names[i].capitalize() + " "
-
-        if job[0] in job_data:
-            job_data[job[0]].append(job)
-        else:
-            job_data[job[0]] = [job]
-        print(job_data)
-        write_json_file(job_data)
         # test if file is always saved
         print(employer_test())
         print("Your employer number is {}.".format(counter))
