@@ -54,8 +54,6 @@ def jobSearch():
         outcome = input("Do you want to save the job: ")
         number = int(input("Give me your employee number: "))
         if outcome == "yes":
-            print("Note you can only save one job, so apply before \
-saving another.")
             employees = read_employee_data_from_file()
             employee = employees[number - 1]
             employee.jobsaved = job
