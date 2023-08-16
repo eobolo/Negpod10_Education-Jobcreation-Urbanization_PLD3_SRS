@@ -2,6 +2,7 @@
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 no_c='\033[0m'
+RD='\033[0;31m'
 
 echo -e "${GREEN}\n\n\n\n**************************************************************************************************************************************************\n\n\n  ==========================================================WELCOME TO NEGPOD 10 PLD PROJECT===================================================\n\n\n****************************************************************************************************************************************************${no_c}"
 
@@ -33,12 +34,12 @@ do
 			python3 "forget_details.py"
 			;;
 		4)
-			echo "Exiting app..."
+			echo -e "${GREEN}Exiting app...${no_c}"
 			sleep 2
 			exit 0
 			;;
 		*)
-			echo "Invalid input, enter a valid option!"
+			echo -e "${RD}Invalid input, enter a valid option!${no_c}"
 			sleep 1
 			;;
 	esac
@@ -51,7 +52,7 @@ do
 		echo -e "\nSELECT AN OPTION\n 1 to create account\n 2 to login\n 3 to recover password\n 4 to log-out.\n ENTER VALID OPTION: "
 		read -r OPTION
 	else
-		echo -e "\nExiting app ..."
+		echo -e "${RD}\nExiting app ...${no_c}"
 		sleep 1
 		exit 0
 	fi
