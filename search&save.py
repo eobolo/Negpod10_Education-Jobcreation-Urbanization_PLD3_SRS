@@ -38,8 +38,12 @@ def jobSearch():
             else:
                 break
         get_job = data[first_letter]
+        print(f"Listing jobs with the first letter as {first_letter}")
         for i in range(len(get_job)):
-            print(f"{get_job[i]}", end=", ")
+            if i < len(get_job) - 1:
+                print(f"{get_job[i]}", end=", ")
+            else:
+                print(f"{get_job[i]}", end="\n")
         job_name = input("what job do you want to select: ")
         job_name = job_name.split(sep=" ")
         job = ""
