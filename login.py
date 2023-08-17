@@ -24,6 +24,7 @@ def login():
     password = input("Enter your password: ")
     status = input("Enter yes for emloyer no for employee: ")
     status_number = int(input("Enter your employee or employer number: "))
+    i = 0
     while True:
         if status.lower() == "yes":
             data = read_employer_data_from_file()
@@ -51,11 +52,43 @@ or employer number: "))
             elif instance.email != email:
                 print(Color.RED + "This email {} is incorrect!".format(email)+ Color.RESET)
                 print(Color.YELLOW +"re-enter email again..."+ Color.RESET)
-                email = input("Enter your email: ")
+                if i < 2:
+                    email = input("Enter your email: ")
+                else:
+                    choice = input("do you want to recover details yes or no: ")
+                    if choice.lower() == "yes":
+                        print("Enter number for forgot detail in shell menu and \
+returning to Menu.")
+                        break
+                    else:
+                        print("re-enter details again...")
+                        email = input("Enter your email: ")
+                        password = input("Enter your password: ")
+                        status = input("Enter yes for emloyer no for employee: ")
+                        status_number = int(input("Enter your employee \
+or employer number: "))
+                        i = 0
+                i += 1
             else:
                 print(Color.RED +"This password {} is incorrect!".format(password)+ Color.RESET)
                 print(Color.YELLOW +"re-enter password again..."+ Color.RESET)
-                password = input("Enter your password: ")
+                if i < 2:
+                    password = input("Enter your password: ")
+                else:
+                    choice = input("do you want to recover details yes or no: ")
+                    if choice.lower() == "yes":
+                        print("Enter number for forgot detail in shell menu and \
+returning to Menu.")
+                        break
+                    else:
+                        print("re-enter details again...")
+                        email = input("Enter your email: ")
+                        password = input("Enter your password: ")
+                        status = input("Enter yes for emloyer no for employee: ")
+                        status_number = int(input("Enter your employee \
+or employer number: "))
+                        i = 0
+                i += 1
         elif status.lower() == "no":
             data = read_employee_data_from_file()
             instance = data[status_number - 1]
@@ -82,11 +115,43 @@ or employer number: "))
             elif instance.email != email:
                 print(Color.RED +"This email {} is incorrect!".format(email)+ Color.RESET)
                 print(Color.YELLOW +"re-enter email again..."+ Color.RESET)
-                email = input("Enter your email: ")
+                if i < 2:
+                    email = input("Enter your email: ")
+                else:
+                    choice = input("do you want to recover details yes or no: ")
+                    if choice.lower() == "yes":
+                        print("Enter number for forgot detail in shell menu and \
+returning to Menu.")
+                        break
+                    else:
+                        print("re-enter details again...")
+                        email = input("Enter your email: ")
+                        password = input("Enter your password: ")
+                        status = input("Enter yes for emloyer no for employee: ")
+                        status_number = int(input("Enter your employee \
+or employer number: "))
+                        i = 0
+                i += 1
             else:
                 print(Color.RED +"This password {} is incorrect!".format(password)+ Color.RESET)
                 print(Color.YELLOW +"re-enter password again..."+ Color.RESET)
-                password = input("Enter your password: ")
+                if i < 2:
+                    password = input("Enter your password: ")
+                else:
+                    choice = input("do you want to recover details yes or no: ")
+                    if choice.lower() == "yes":
+                        print("Enter number for forgot detail in shell menu and \
+returning to Menu.")
+                        break
+                    else:
+                        print("re-enter details again...")
+                        email = input("Enter your email: ")
+                        password = input("Enter your password: ")
+                        status = input("Enter yes for emloyer no for employee: ")
+                        status_number = int(input("Enter your employee \
+or employer number: "))
+                        i = 0
+                i += 1
         else:
             print(Color.RED +"Incorrect status enter yes or no..."+ Color.RESET)
             status = input("Enter your status again: ")
