@@ -13,7 +13,7 @@ interesting methods
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+from colours import Color
 
 class Employers():
     __counter = 0
@@ -126,8 +126,8 @@ class Employers():
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, recipient_email, msg.as_string())
             server.quit()
-            print("Email sent successfully.")
+            print(Color.GREEN + "Email sent successfully."+ Color.RESET)
         except Exception as e:
             print("An error occurred while sending the email:", e)
 
-        print("Email details sent to employer.")
+        print(Color.GREEN +"Email details sent to employer."+ Color.RESET)

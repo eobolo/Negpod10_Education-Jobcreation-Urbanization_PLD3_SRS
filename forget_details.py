@@ -10,6 +10,7 @@ from employees import Employees
 from employee_data import *
 from employers import Employers
 from employer_data import *
+from colours import Color
 
 
 def forget_details():
@@ -28,6 +29,6 @@ def forget_details():
 
 outcome = forget_details()
 if outcome == 0:
-    print("details gotten successfully...")
+    print(Color.GREEN +"details gotten successfully..."+ Color.RESET)
 else:
-    print("details not found, email incorrect or not found in database")
+    print(Color.RED +"details not found, email incorrect or not found in database"+ Color.RESET)

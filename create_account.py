@@ -6,6 +6,7 @@ from employee_data import *
 from employee_counter import *
 from employer_counter import *
 from all_jobs import *
+from colours import Color
 
 def creating_login_details():
 
@@ -95,7 +96,7 @@ def create_user_data():
         write_json_file(job_data)
         # test if file is always saved
         print(employer_test())
-        print("Your employer number is {}.".format(counter))
+        print(Color.GREEN +"Your employer number is {}.".format(counter)+ Color.RESET)
     else:
         for key, value in zip(keys, values):
             employees_dict[key] = value
@@ -114,7 +115,7 @@ def create_user_data():
         write_employee_counter_to_file(counter)
         # test if file is always saved
         print(employee_test())
-        print("Your employee number is {}.".format(counter))
+        print(Color.GREEN +"Your employee number is {}.".format(counter)+ Color.RESET)
 
 
 def employer_test():

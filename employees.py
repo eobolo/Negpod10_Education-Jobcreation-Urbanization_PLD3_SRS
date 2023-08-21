@@ -15,6 +15,7 @@ methods
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from colours import Color
 
 
 class Employees():
@@ -137,8 +138,8 @@ class Employees():
             server.login(sender_email, sender_password)
             server.sendmail(sender_email, recipient_email, msg.as_string())
             server.quit()
-            print("Email sent successfully.")
+            print(Color.GREEN + "Email sent successfully."+ Color.RESET)
         except Exception as e:
-            print("An error occurred while sending the email:", e)
+            print(Color.RED +"An error occurred while sending the email:", e + Color.RESET)
 
-        print("Email details sent to employee.")
+        print(Color.GREEN +"Email details sent to employee."+ Color.RESET)

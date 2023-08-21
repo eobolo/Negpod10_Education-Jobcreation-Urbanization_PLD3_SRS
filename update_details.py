@@ -12,7 +12,7 @@ from employees import Employees
 from employee_data import *
 from employers import Employers
 from employer_data import *
-
+from colours import Color
 
 def update_details():
     print("Are you an Employer or Employee?")
@@ -23,13 +23,13 @@ def update_details():
             employer_num = int(input("Enter your employee number in digit: "))
             employer = read_employer_data_from_file()
             employer_instance = employer[employer_num - 1]
-            print("What do you want to update?")
+            print(Color.YELLOW +"What do you want to update?"+ Color.RESET)
             message = input("age, name, email, phonenumber, \
 dob(date of birth), password: ")
             if message.lower() == "age":
                 data = input("Enter new age in number: ")
                 employer_instance.age = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -38,7 +38,7 @@ dob(date of birth), password: ")
             elif message.lower() == "name":
                 data = input("Enter new name: ")
                 employer_instance.name = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -47,7 +47,7 @@ dob(date of birth), password: ")
             elif message.lower() == "email":
                 data = input("Enter a new email: ")
                 employer_instance.email = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -56,7 +56,7 @@ dob(date of birth), password: ")
             elif message.lower() == "dob":
                 data = input("Enter a new dob: ")
                 employer_instance.dob = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -65,7 +65,7 @@ dob(date of birth), password: ")
             elif message.lower() == "phonenumber":
                 data = input("Enter new phonenumber: ")
                 employer_instance.phnum = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -74,27 +74,27 @@ dob(date of birth), password: ")
             elif message.lower() == "password":
                 data = input("Enter new password: ")
                 employer_instance.password = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
                 else:
                     break
             else:
-                print(f"Entered wrong input {message}.")
+                print(Color.RED + f"Entered wrong input {message}."+ Color.RESET)
                 print("age, name, email, phonenumber, dob(date of birth), \
 password are the options")
         elif message.lower() == "no":
             employee_num = int(input("Enter your employee number in digit: "))
             employee = read_employee_data_from_file()
             employee_instance = employee[employee_num - 1]
-            print("What do you want to update?")
+            print(Color.YELLOW +"What do you want to update?"+ Color.RESET)
             message = input("age, name, email, phonenumber, \
 dob(date of birth), password: ")
             if message.lower() == "age":
                 data = input("Enter new age in number: ")
                 employee_instance.age = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -103,7 +103,7 @@ dob(date of birth), password: ")
             elif message.lower() == "name":
                 data = input("Enter new name: ")
                 employee_instance.name = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -112,7 +112,7 @@ dob(date of birth), password: ")
             elif message.lower() == "email":
                 data = input("Enter a new email: ")
                 employee_instance.email = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -121,7 +121,7 @@ dob(date of birth), password: ")
             elif message.lower() == "dob":
                 data = input("Enter a new dob: ")
                 employee_instance.dob = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -130,7 +130,7 @@ dob(date of birth), password: ")
             elif message.lower() == "phonenumber":
                 data = input("Enter new phonenumber: ")
                 employee_instance.phnum = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
@@ -139,19 +139,19 @@ dob(date of birth), password: ")
             elif message.lower() == "password":
                 data = input("Enter new password: ")
                 employee_instance.password = data
-                print("Do you still want to update profile?")
+                print(Color.YELLOW +"Do you still want to update profile?"+ Color.RESET)
                 message = input("Enter yes or no: ")
                 if message.lower() == "yes":
                     continue
                 else:
                     break
             else:
-                print(f"Entered wrong input {message}.")
+                print(Color.RED + f"Entered wrong input {message}." + Color.RESET)
                 print("age, name, email, phonenumber, dob(date of birth), \
 password are the options")
         else:
-            print(f"wrong input {message} Enter yes for employer no \
-for employee.")
+            print(Color.RED + f"wrong input {message} Enter yes for employer no \
+for employee." + Color.RESET)
 
     if question.lower() == "yes":
         employer[employer_num - 1] = employer_instance
